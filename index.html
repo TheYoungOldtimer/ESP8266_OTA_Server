@@ -1,12 +1,1285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ESP8266 OTA Server</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="icon" href="images\icon.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css4.6/bootstrap.min.css">
+    <link rel="stylesheet" href="css4/bootstrap.css">
+    <link rel="stylesheet" href="css4/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css4/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
-  <h1>Welcome to My ESP8266 OTA Server</h1>
-  <p>This is a test page hosted on GitHub Pages.</p>
-  <p><a href="firmware.ino.bin" download>Download Firmware</a></p>
+    <header>
+        <div class="head1 bg-red h50 align-items-center">
+            <div class="container col-12 " >
+                <nav class="navbar navbar-dark navbar-expand h50 justify-content-center pt-0 pb-0 mt-0 mb-0">
+                    <div class="navbar-nav">
+                        <div class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 pt-auto pb-auto border-s border-e">
+                            <i class="fa-regular fa-clock head1-icon-padding"></i>
+                            <p class="d-inline p18"> Sun-Fri: 9am-6pm Saterday Closed</p>
+                        </div>
+                        <div class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-solid fa-location-dot head1-icon-padding"></i>
+                            <p class="d-inline p18"> Iran, Isfahan, IUT campus, ECE department</p>
+                        </div>
+                        <div class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-solid fa-headset head1-icon-padding"></i> 
+                            <p class="d-inline p18"> Support@OTA.com</p>
+                        </div>
+                        
+                    </div>
+                    <div class="icons navbar-nav head1-linking">
+                        <a class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e  h50 pt-auto pb-auto">
+                            <i class="fa-brands fa-twitter head1-icon-padding" id="twitter" viewBox="0 0 16 16"></i>
+                        </a>
+                        <a class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-brands fa-vimeo-v head1-icon-padding"></i>
+                        </a>
+                        <a class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-solid fa-futbol head1-icon-padding"></i>
+                        </a>
+                        <a class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-brands fa-behance head1-icon-padding"></i>
+                        </a>
+                        <a class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-solid fa-wifi head1-icon-padding"></i>
+                              
+                        </a>
+                        <a class="navbar-item h50 nav-link active mt-0 mb-0 ms-0 me-0 ps-3 pe-3 border-e">
+                            <i class="fa-brands fa-instagram head1-icon-padding"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            </div>
+        </div>
+
+        <div class="head2 navbar h104 head2-font ">
+            <div class=" ms-auto me-auto m-l-r-head2 ps-0 pe-0">
+                
+                <a href="index2.html" class="navbar-brand margin-brand d-inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="none" viewBox="0 0 40 20"><g clip-path="url(#clip0_4730_4256)"><path fill="currentColor" fill-rule="evenodd" d="M40 10C40 4.616 35.572.244 30.146.244c-.5 0-1.014.028-1.513.114-4.22.612-7.05 3.731-8.633 6.124C18.418 4.09 15.586.97 11.367.358c-.5-.071-1.013-.114-1.513-.114C4.414.244 0 4.616 0 10s4.427 9.756 9.854 9.756c.5 0 1.014-.028 1.527-.114 4.22-.626 7.05-3.746 8.633-6.138 1.582 2.392 4.413 5.512 8.633 6.138.5.071 1.013.114 1.527.114C35.572 19.756 40 15.384 40 10m-29.119 6.224a6.4 6.4 0 0 1-1.04.071c-3.581 0-6.482-2.834-6.482-6.295 0-3.475 2.914-6.295 6.495-6.295.347 0 .694.028 1.041.071C14.88 4.36 17.307 8.391 18.14 10c-.846 1.624-3.29 5.64-7.259 6.224M29.105 3.776C25.122 4.36 22.679 8.391 21.86 10c.819 1.61 3.262 5.64 7.245 6.224.347.043.694.071 1.04.071 3.568 0 6.482-2.82 6.482-6.295 0-3.46-2.9-6.295-6.481-6.295a9 9 0 0 0-1.041.071M7.075 8.955h5.96v1.876h-5.96zm25.82 1.89h-2.009v1.97H28.96v-1.97h-2.01v-1.89h2.01V6.983h1.926v1.972h2.01zm4.568-9.52c0-.59.483-1.081 1.069-1.081.603 0 1.086.49 1.086 1.082 0 .625-.483 1.082-1.086 1.082-.586 0-1.069-.49-1.069-1.082M38.547.65h-.534v1.352h.345v-.457h.19l.189.457h.379l-.259-.507c.173-.068.259-.203.259-.389 0-.287-.155-.456-.569-.456m.88.676a.9.9 0 0 0-.896-.913c-.517 0-.88.372-.88.913 0 .558.414.913.88.913.516 0 .896-.355.896-.913m-.673-.237c0 .17-.086.22-.241.22l-.173.017v-.44h.173c.19 0 .241.05.241.203" clip-rule="evenodd"></path></g><defs><clipPath id="clip0_4730_4256"><path fill="currentColor" d="M0 .244h40v19.512H0z"></path></clipPath></defs></svg></a>
+                <nav class="navbar navbar-expand more-marg-left pe-0 pt-0 pb-0 mt-0 mb-0 d-inline-block">
+                    
+        
+                    <ul class="navbar navbar-nav ms-auto pe-0">
+                        <li class="dropdown d-inline-block">
+                            <a href="#" class="navbar-item nav-link color-toggle-red-black dropdown-padding">Home</a>
+                        </li>  
+                        <li class="dropdown d-inline-block">
+                            <a href="#" class="navbar-item nav-link dropdown dropdown-toggle dropdown-padding color-toggle-red-black" data-bs-hover="dropdown">Pages<i class='fas fa-angle-down d-inline-block' ></i></a>
+                            <div class="dropdown-menu dropdown-menu-fade" aria-labelledby="navbarDropdown">
+                                <a href="#" class="dropdown-item options">About Us</a>
+                                <a href="#" class="dropdown-item options">Coming Soon</a>
+                                <a href="#" class="dropdown-item options">404</a>
+
+                            </div>
+                        </li>
+                        <li class="dropdown d-inline-block">
+                            <a href="#" class="navbar-item nav-link dropdown dropdown-toggle dropdown-padding color-toggle-red-black" data-bs-hover="dropdown">Products<i class='fas fa-angle-down d-inline-block' ></i></a>
+                            <div class="dropdown-menu dropdown-menu-fade" aria-labelledby="navbarDropdown">
+                                <a href="#" class="dropdown-item options">Menu Card</a>
+                                <a href="#" class="dropdown-item options">Menu Card 2</a>
+                                <a href="#" class="dropdown-item options">Menu Card 3</a>
+
+                            </div>
+                        </li>
+                        <li class="dropdown d-inline-block ">
+                            <a href="#" class="navbar-item nav-link color-toggle-red-black dropdown-padding ">Community</a>
+                        </li>  
+                        <li class="dropdown d-inline-block">
+                            <a href="#" class="navbar-item nav-link dropdown dropdown-toggle dropdown-padding color-toggle-red-black" data-bs-hover="dropdown">Blog<i class='fas fa-angle-down d-inline-block' ></i></a>
+                            <div class="dropdown-menu dropdown-menu-fade" aria-labelledby="navbarDropdown">
+                                <a href="#" class="dropdown-item options">Blog Style 1</a>
+                                <a href="#" class="dropdown-item options">Blog Style 2</a>
+                                <a href="#" class="dropdown-item options">Blog Single</a>
+
+                            </div>
+                        </li>
+                        <li class="dropdown d-inline-block">
+                            <a href="#" class="navbar-item nav-link dropdown dropdown-toggle dropdown-padding color-toggle-red-black" data-bs-hover="dropdown">Shop<i class='fas fa-angle-down d-inline-block' ></i></a>
+                            <div class="dropdown-menu dropdown-menu-fade" aria-labelledby="navbarDropdown">
+                                <a href="#" class="dropdown-item options">Menu Card</a>
+                                <a href="#" class="dropdown-item options">Menu Card 2</a>
+                                <a href="#" class="dropdown-item options">Menu Card 3</a>
+
+                            </div>
+                        </li>
+                        <li class="dropdown d-inline-block">
+                            <a href="firmware.ino.bin" class="navbar-item nav-link color-toggle-red-black dropdown-padding" id="contact-margin">Download</a>
+                        </li>
+                        <a href="#" class="navbar-item nav-link d-inline-block circle-item margin-item"><i class="fa-solid fa-magnifying-glass " id="magnifier"></i></a>
+                        <a href="#" class="navbar-item nav-link d-inline-block circle-item" id="cart-margin"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+                        
+                        
+                    </ul>
+                </nav>
+                
+            </div>
+        </div>
+    </header>
+    <section class="banner-section">    
+        <video id="banner-vid" src="images/P_M_MAIN_16x9_cut-homepage_1.webm" preload="auto" autoplay="true" loop="true" playsinline="true" webkit-playsinline="true" x5-playsinline="true" style="width: 100%; height: 100%;"></video>
+        <h3 Class="wrapper" id="emp">Empowering anyone to innovate</h3>
+        <div class="banner-btn">
+            
+                <a href="" id="order-now" class="wrapper"><span>BUY NOW</span></a>
+                <a href="" id="book-table" class="wrapper"><span>DISCOVER PLUG & MAKE</span></a>
+            
+
+        </div>
+       
+        
+
+    </section>
+
+    <div class="History">
+        <div class="container">
+            <div class="history-content row align-items-center flex-row-reverse">
+                <div class="col-lg-6 col-12">
+                    <img src="images/01.png" alt="">
+                </div>
+                <div class="col-lg-6 col-12 info">
+                    <h4>Arduino store</h4>
+                    <h3>About Arduino History!</h3>
+                    <p >Synergistca conceptualize leveraged inte ectual capital through virtual and the a and Proactiviely initiate lrisk highyield a platforms after realtme froms growth that awesome tently matrix robusti method powerm foistcky Sytical concepta leved ntelectua anding capita hrough virtua nteectua that capta the and Proactiviely initiate low risk highyield platforms after realtme froms that there andin Proctive initate low risk high yeld platform aftering Conven iterate optimal paradigms reliable techno.</p>
+                    <div class="history-btn">
+                        <a href="" id="direction" class="wrapper"><span>get direction</span></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <section class="sepcial">
+        <img src="images/bg2.jpg__i=AA" class="special-image"  alt="">
+        <div class="blur"></div>
+        <div class="container items-special">
+            
+            
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-12 ">
+                    <div class="product-item card" id="hovered1">
+                        <div class="product-pic">
+                            <img src="images/chip1.webp" alt="">
+                            <span class="shape" id="shape1"><span id="shape1-span">$10</span></span>
+                        </div>
+                        <div class="product-content">
+                            <p>Kids Robot</p>
+                            <h6 id="h1-action">Fully prepared Arduino board</h6>
+                            <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-12 ">
+                    <div class="product-item card" id="hovered2">
+                        <div class="product-pic">
+                            <img src="images/chip2.webp" alt="">
+                            <span class="shape" id="shape2"><span id="shape2-span">$20</span></span>
+                        </div>
+                        <div class="product-content">
+                            <p>Uno R3</p>
+                            <h6 id="h2-action">Fully prepared Arduino board</h6>
+                            <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-12 ">
+                    <div class="product-item card" id="hovered3">
+                        <div class="product-pic">
+                            <img src="images/chip3.jpg" alt="">
+                            <span class="shape" id="shape3"><span id="shape3-span">$30</span></span>
+                        </div>
+                        <div class="product-content">
+                            <p>Nano R3</p>
+                            <h6 id="h3-action">Fully prepared Arduino board</h6>
+                            <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-12 ">
+                    <div class="product-item card" id="hovered4">
+                        <div class="product-pic">
+                            <img src="images/chip4.jpg" alt="">
+                            <span class="shape" id="shape4"><span id="shape4-span">$40</span></span>
+                        </div>
+                        <div class="product-content">
+                            <p>Netiggo-AVR</p>
+                            <h6 id="h4-action">Fully prepared Arduino board</h6>
+                            <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+
+    </section>
+
+    <div class="all-products" >
+        <div class="">
+            <div class="heads">
+                
+                <span>Gadget Item</span>
+                <h2>OUR HUGE CATALOG</h2>
+            </div>
+
+            <div class="foods">
+                <div class="food-types row me-auto ms-auto container justify-content-center">
+                    <div class="col-xl-3 ps-0 col-md-6 col-12" style="margin-right: -30px;" id="burgers">
+                        <div class="foodType-item card" id="foodType-item-burgers">
+                            <img src="images/chip1.webp" alt="">
+                            <span>OS MENU</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 ps-0 col-md-6 col-12"  style="margin-right: -30px;" id="pizzas">
+                        <div class="foodType-item card" id="foodType-item-pizzas">
+                            <img src="images/chip2.webp" alt="">
+                            <span>ACTUATOR MENU</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 ps-0 col-md-6 col-12"  style="margin-right: -30px;" id="snacks">
+                        <div class="foodType-item card" id="foodType-item-snacks">
+                            <img src="images/chip3.jpg" alt="">
+                            <span>SENSOR MENU</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 ps-0 col-md-6 col-12"  style="margin-right: -30px;" id="drinks">
+                        <div class="foodType-item card" id="foodType-item-drinks">
+                            <img src="images/chip4.jpg" alt="">
+                            <span>BOARD MENU</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-burger row ms-auto me-auto col-xl-9 justify-content-center mt-5">
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered5">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip1.webp" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag1"><span id="ptag-1">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card pt-4 pb-4 food-cards" id="hovered6">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip2.webp" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag2"><span id="ptag-2">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered7">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip3.jpg" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag3"><span id="ptag-3">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered8">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip4.jpg" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag4"><span id="ptag-4">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered9">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip1.webp" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag5"><span id="ptag-5">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered10">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip2.webp" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag6"><span id="ptag-6">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered11">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip3.jpg" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag7"><span id="ptag-7">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered12">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip4.jpg" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag8"><span id="ptag-8">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="food-pizza row ms-auto me-auto col-xl-9 justify-content-center mt-5" style="display: none;">
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered13">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip1.webp" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag9"><span id="ptag-9">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card pt-4 pb-4 food-cards" id="hovered14">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip2.webp" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag10"><span id="ptag-10">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered15">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip3.jpg" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag11"><span id="ptag-11">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered16">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip4.jpg" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag12"><span id="ptag-12">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="food-snacks row ms-auto me-auto col-xl-9 justify-content-center mt-5" style="display: none;">
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered17">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip1.webp" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag13"><span id="ptag-13">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card pt-4 pb-4 food-cards" id="hovered18">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip2.webp" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag14"><span id="ptag-14">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered19">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip3.jpg" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag15"><span id="ptag-15">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered20">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip4.jpg" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag16"><span id="ptag-16">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered21">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip1.webp" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag17"><span id="ptag-17">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered22">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip2.webp" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag18"><span id="ptag-19">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="food-drinks row ms-auto me-auto col-xl-9 justify-content-center mt-5" style="display: none;">
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered23">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip1.webp" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag19"><span id="ptag-19">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card pt-4 pb-4 food-cards" id="hovered24">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip2.webp" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag20"><span id="ptag-20">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards me-2" id="hovered25">
+                        <div class="row g-0 d-flex flex-wrap">
+                          <div class="ms-4  all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip3.jpg" width="120px;" class="img-fluid" alt="...">
+                            <span class="price-tag" id="price-tag21"><span id="ptag-21">$10</span></span>
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                              <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                              <div class="ratings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                              <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="card pt-4 pb-4 food-cards" id="hovered26">
+                        <div class="row g-0">
+                          <div class="ms-4 all-product-pic"  style="width: 120px !important;">
+                            <img src="images/chip4.jpg" width="120px;" class="img-fluid rounded-start" alt="...">
+                            <span class="price-tag" id="price-tag22"><span id="ptag-22">$10</span></span>
+                        </div>
+                          <div class="col-md-9">
+                            <div class="card-body text-start ps-3 pt-0 food-card-body">
+                                
+                                <h5 class="card-title mb-4">Fully prepared Arduino board</h5>
+                                <div class="ratings">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>  
+                                <p class="card-text">Conveniently imaiipact are worldwide andng datang arovem theme with there</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="Reservation-wrapper">
+        <div class="reserve-blur"></div>
+        <div class="reserve-contents">
+            <div class="reserve-heads container">
+                <img src="images/sc-img.png" class="d-block logo" alt="">
+                <span>Design your module</span>
+                <h2>First you need to Sign in</h2>
+            </div>
+            <div class="reserve-form justify-content-center align-items-center container ">
+                <div class="row">
+                    <div class="form-pic col-lg-6 col-12">
+                        <img src="images/chip2.webp" class="img-fluid w-100 ps-3 pe-3"  alt="">
+                    </div>
+                    <div class="col-lg-6 col-12 justify-content-center align-items-center form-contents">
+                        <div class="reserve-form p-3">
+                            <form action="">
+                                <input type="text" placeholder="Full Name" class="form-inputs me-4">
+                                <input type="email" placeholder="Your Email" class="form-inputs">
+                                <input type="text" placeholder="Phone Number" class="form-inputs me-4">
+                               
+                                <select class="form-inputs font-adj-inp">
+                                    <option value="1" class="font-adj-options">pauls Clocl</option>
+                                    <option value="2" class="font-adj-options">10:00 AM</option>
+                                    <option value="3" class="font-adj-options">11:00 AM</option>
+                                    <option value="4" class="font-adj-options">12:00 PM</option>
+                                    <option value="5" class="font-adj-options">1:00 PM</option>
+                                    <option value="6" class="font-adj-options">2:00 PM</option>
+                                    <option value="7" class="font-adj-options">3:00 PM</option>
+                                    <option value="8" class="font-adj-options">4:00 PM</option>
+                                    <option value="9" class="font-adj-options">5:00 PM</option>
+                                </select>
+                                <select class="form-inputs font-adj-inp me-4">
+                                    <option value="1" class="font-adj-options">Board Size</option>
+                                    <option value="2" class="font-adj-options">2F-3F</option>
+                                    <option value="3" class="font-adj-options">2.5F-3.5F</option>
+                                    <option value="4" class="font-adj-options">3F-4F</option>
+                                    <option value="5" class="font-adj-options">3.5F-4.5F</option>
+                                    <option value="6" class="font-adj-options">4F-5F</option>
+                                    <option value="7" class="font-adj-options">4.5F-5.5F</option>
+                                    <option value="8" class="font-adj-options">5F-6F</option>
+                                    <option value="9" class="font-adj-options">5.5F-6.5F</option>
+                                </select>
+                                <input type="date" placeholder="Enter Time" class="form-inputs font-adj-inp" date-prrovide="datepicker">
+                                <textarea name="Message" rows="6" placeholder="Message" id="Message-text"></textarea>
+                                <div class="book-btn">
+                                    <a href="" id="book-table2" class="wrapper"><span>Sign in</span></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    </section>
+    
+
+
+    <script src="https://kit.fontawesome.com/987e127231.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <script src="JS/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script src="js4.6/bootstrap.min.js"></script>
+    <script src="JS/bootstrap.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/popper1.min.js"></script>
+    <script src="js4/bootstrap.js"></script>
+    <script src="js4.6/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        $("#hovered1").mouseenter(function(){
+            $("#h1-action").css({ 'color': 'rgb(0, 255, 242)' });
+        });
+        $("#hovered1").mouseleave(function(){
+            $("#h1-action").css({ 'color': 'rgb(0, 255, 242)'});
+        });
+        $("#hovered1").mouseenter(function(){
+            $("#shape1").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered1").mouseleave(function(){
+            $("#shape1").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered1").mouseenter(function(){
+            $("#shape1-span").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered1").mouseleave(function(){
+            $("#shape1-span").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered2").mouseenter(function(){
+            $("#h2-action").css({ 'color': 'rgb(0, 255, 242)' });
+        });
+        $("#hovered2").mouseleave(function(){
+            $("#h2-action").css({ 'color': 'rgb(0, 255, 242)'});
+        });
+        $("#hovered2").mouseenter(function(){
+            $("#shape2").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered2").mouseleave(function(){
+            $("#shape2").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered2").mouseenter(function(){
+            $("#shape2-span").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered2").mouseleave(function(){
+            $("#shape2-span").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered3").mouseenter(function(){
+            $("#h3-action").css({ 'color': 'rgb(0, 255, 242)' });
+        });
+        $("#hovered3").mouseleave(function(){
+            $("#h3-action").css({ 'color': '#696969'});
+        });
+        $("#hovered3").mouseenter(function(){
+            $("#shape3").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered3").mouseleave(function(){
+            $("#shape3").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered3").mouseenter(function(){
+            $("#shape3-span").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered3").mouseleave(function(){
+            $("#shape3-span").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered4").mouseenter(function(){
+            $("#h4-action").css({ 'color': 'rgb(0, 255, 242)' });
+        });
+        $("#hovered4").mouseleave(function(){
+            $("#h4-action").css({ 'color': '#696969'});
+        });
+        $("#hovered4").mouseenter(function(){
+            $("#shape4").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered4").mouseleave(function(){
+            $("#shape4").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered4").mouseenter(function(){
+            $("#shape4-span").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered4").mouseleave(function(){
+            $("#shape4-span").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+
+        $("#hovered5").mouseenter(function(){
+            $("#price-tag1").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered5").mouseleave(function(){
+            $("#price-tag1").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered5").mouseenter(function(){
+            $("#ptag-1").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered5").mouseleave(function(){
+            $("#ptag-1").css({ 'color': '#fff', "transition":"color 0.3s ease",});     
+        });
+
+        $("#hovered6").mouseenter(function(){
+            $("#price-tag2").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered6").mouseleave(function(){
+            $("#price-tag2").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered6").mouseenter(function(){
+            $("#ptag-2").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered6").mouseleave(function(){
+            $("#ptag-2").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+        
+        $("#hovered7").mouseenter(function(){
+            $("#price-tag3").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered7").mouseleave(function(){
+            $("#price-tag3").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered7").mouseenter(function(){
+            $("#ptag-3").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered7").mouseleave(function(){
+            $("#ptag-3").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered8").mouseenter(function(){
+            $("#price-tag4").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered8").mouseleave(function(){
+            $("#price-tag4").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered8").mouseenter(function(){
+            $("#ptag-4").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered8").mouseleave(function(){
+            $("#ptag-4").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered9").mouseenter(function(){
+            $("#price-tag5").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgbrgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered9").mouseleave(function(){
+            $("#price-tag5").css({ 'background-color': 'rgbrgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered9").mouseenter(function(){
+            $("#ptag-5").css({ 'color': 'rgbrgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered9").mouseleave(function(){
+            $("#ptag-5").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered10").mouseenter(function(){
+            $("#price-tag6").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered10").mouseleave(function(){
+            $("#price-tag6").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered10").mouseenter(function(){
+            $("#ptag-6").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered10").mouseleave(function(){
+            $("#ptag-6").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered11").mouseenter(function(){
+            $("#price-tag7").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered11").mouseleave(function(){
+            $("#price-tag7").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered11").mouseenter(function(){
+            $("#ptag-7").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered11").mouseleave(function(){
+            $("#ptag-7").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered12").mouseenter(function(){
+            $("#price-tag8").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered12").mouseleave(function(){
+            $("#price-tag8").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered12").mouseenter(function(){
+            $("#ptag-8").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered12").mouseleave(function(){
+            $("#ptag-8").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered13").mouseenter(function(){
+            $("#price-tag9").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered13").mouseleave(function(){
+            $("#price-tag9").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered13").mouseenter(function(){
+            $("#ptag-9").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered13").mouseleave(function(){
+            $("#ptag-9").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered14").mouseenter(function(){
+            $("#price-tag10").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered14").mouseleave(function(){
+            $("#price-tag10").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered14").mouseenter(function(){
+            $("#ptag-10").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered14").mouseleave(function(){
+            $("#ptag-10").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered15").mouseenter(function(){
+            $("#price-tag11").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered15").mouseleave(function(){
+            $("#price-tag11").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered15").mouseenter(function(){
+            $("#ptag-11").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered15").mouseleave(function(){
+            $("#ptag-11").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered16").mouseenter(function(){
+            $("#price-tag12").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242))', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered16").mouseleave(function(){
+            $("#price-tag12").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered16").mouseenter(function(){
+            $("#ptag-12").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered16").mouseleave(function(){
+            $("#ptag-12").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered17").mouseenter(function(){
+            $("#price-tag13").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered17").mouseleave(function(){
+            $("#price-tag13").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered17").mouseenter(function(){
+            $("#ptag-13").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered17").mouseleave(function(){
+            $("#ptag-13").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered18").mouseenter(function(){
+            $("#price-tag14").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered18").mouseleave(function(){
+            $("#price-tag14").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered18").mouseenter(function(){
+            $("#ptag-14").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered18").mouseleave(function(){
+            $("#ptag-14").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered19").mouseenter(function(){
+            $("#price-tag15").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered19").mouseleave(function(){
+            $("#price-tag15").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered19").mouseenter(function(){
+            $("#ptag-15").css({ 'color': 'rgb(0, 255, 242)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered19").mouseleave(function(){
+            $("#ptag-15").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered20").mouseenter(function(){
+            $("#price-tag16").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(0, 255, 242)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered20").mouseleave(function(){
+            $("#price-tag16").css({ 'background-color': 'rgb(0, 255, 242)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered20").mouseenter(function(){
+            $("#ptag-16").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered20").mouseleave(function(){
+            $("#ptag-16").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered21").mouseenter(function(){
+            $("#price-tag17").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(214, 2, 49)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered21").mouseleave(function(){
+            $("#price-tag17").css({ 'background-color': 'rgb(214, 2, 49)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered21").mouseenter(function(){
+            $("#ptag-17").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered21").mouseleave(function(){
+            $("#ptag-17").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered22").mouseenter(function(){
+            $("#price-tag18").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(214, 2, 49)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered22").mouseleave(function(){
+            $("#price-tag18").css({ 'background-color': 'rgb(214, 2, 49)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered22").mouseenter(function(){
+            $("#ptag-18").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered22").mouseleave(function(){
+            $("#ptag-18").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered23").mouseenter(function(){
+            $("#price-tag19").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(214, 2, 49)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered23").mouseleave(function(){
+            $("#price-tag19").css({ 'background-color': 'rgb(214, 2, 49)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered23").mouseenter(function(){
+            $("#ptag-19").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered23").mouseleave(function(){
+            $("#ptag-19").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered24").mouseenter(function(){
+            $("#price-tag20").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(214, 2, 49)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered24").mouseleave(function(){
+            $("#price-tag20").css({ 'background-color': 'rgb(214, 2, 49)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered24").mouseenter(function(){
+            $("#ptag-20").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered24").mouseleave(function(){
+            $("#ptag-20").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered25").mouseenter(function(){
+            $("#price-tag21").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(214, 2, 49)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered25").mouseleave(function(){
+            $("#price-tag21").css({ 'background-color': 'rgb(214, 2, 49)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered25").mouseenter(function(){
+            $("#ptag-21").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered25").mouseleave(function(){
+            $("#ptag-21").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+        $("#hovered26").mouseenter(function(){
+            $("#price-tag22").css({ 'background-color': '#fff', "transition":"background-color 0.3s ease ", 'border-color': 'rgb(214, 2, 49)', "transition":"border-color 0.3s ease 0.1s" });
+        });
+        $("#hovered26").mouseleave(function(){
+            $("#price-tag22").css({ 'background-color': 'rgb(214, 2, 49)', "transition":"background-color 0.3s ease ", 'border-color': '#fff', "transition":"border-color 0.3s ease 0.1s"});
+        });
+        $("#hovered26").mouseenter(function(){
+            $("#ptag-22").css({ 'color': 'rgb(214, 2, 49)', "transition":"color 0.3s ease 0.1s", });
+        });
+        $("#hovered26").mouseleave(function(){
+            $("#ptag-22").css({ 'color': '#fff', "transition":"color 0.3s ease",});
+        });
+
+
+        $("#pizzas").click(function(){
+            $(".food-burger, .food-snacks, .food-drinks").css({ 'display': 'none' });
+            $(".food-pizza").css({ 'display': 'flex' });
+            $("#foodType-item-pizzas").css({ 'border-top': '4px solid rgb(214, 2, 49)'});
+            $("#foodType-item-drinks, #foodType-item-burgers, #foodType-item-snacks").css({ 'border-top': 'none'});
+
+        });
+        $("#drinks").click(function(){
+            $(".food-burger, .food-snacks, .food-pizza").css({ 'display': 'none' });
+            $(".food-drinks").css({ 'display': 'flex' });
+            $("#foodType-item-drinks").css({ 'border-top': '4px solid rgb(214, 2, 49)' });
+            $("#foodType-item-pizzas, #foodType-item-burgers, #foodType-item-snacks").css({ 'border-top': 'none'});
+        }); 
+        $("#burgers").click(function(){
+            $(".food-pizza, .food-snacks, .food-drinks").css({ 'display': 'none' });
+            $(".food-burger").css({ 'display': 'flex' });
+            $("#foodType-item-burgers").css({ 'border-top': '4px solid rgb(214, 2, 49)'});
+            $("#foodType-item-drinks, #foodType-item-pizzas, #foodType-item-snacks").css({ 'border-top': 'none'});
+        });
+        $("#snacks").click(function(){
+            $(".food-burger, .food-pizza, .food-drinks").css({ 'display': 'none' });
+            $(".food-snacks").css({ 'display': 'flex' });
+            $("#foodType-item-snacks").css({ 'border-top': '4px solid rgb(214, 2, 49)'});
+            $("#foodType-item-drinks, #foodType-item-burgers, #foodType-item-pizzas").css({ 'border-top': 'none'});
+        });
+    </script>
+    
 </body>
 </html>
