@@ -1,0 +1,607 @@
+ril/src/ril_atResponse.c: In function 'Ql_RIL_AT_SetErrCode':
+ril/src/ril_atResponse.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_audio.c: In function 'ATResponse_AUD_handler':
+ril/src/ril_audio.c:398:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsreg':
+ril/src/ril_ble.c:120:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatss':
+ril/src/ril_ble.c:168:10: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsc':
+ril/src/ril_ble.c:245:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsd':
+ril/src/ril_ble.c:311:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsst':
+ril/src/ril_ble.c:381:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsind':
+ril/src/ril_ble.c:461:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsrsp':
+ril/src/ril_ble.c:513:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_Gatsl':
+ril/src/ril_ble.c:559:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_SetLeTxPwr':
+ril/src/ril_ble.c:597:9: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatscon':
+ril/src/ril_ble.c:832:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'RIL_BT_GetLeLocalAddr':
+ril/src/ril_ble.c:891:5: warning: passing argument 3 of 'Ql_RIL_SendATCmd' from incompatible pointer type [enabled by default]
+In file included from ril/src/ril_ble.c:45:0:
+ril/inc/ril.h:187:12: note: expected 'Callback_ATResponse' but argument is of type 'void (*)(char *, u32,  void *)'
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatwreq':
+ril/src/ril_ble.c:914:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatewreq':
+ril/src/ril_ble.c:946:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTGatrreq':
+ril/src/ril_ble.c:976:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTpxpscon':
+ril/src/ril_ble.c:1005:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'OnURCHandler_BTfmpscon':
+ril/src/ril_ble.c:1027:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble.c: In function 'ATRsp_QBTLEADDR_Hdlr':
+ril/src/ril_ble.c:1411:3: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1417:5: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1423:3: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1428:3: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c:1431:2: warning: 'return' with a value, in function returning void [enabled by default]
+ril/src/ril_ble.c: At top level:
+ril/src/ril_ble.c:53:12: warning: 'ATRsp_QBTGatsi_Hdlr' declared 'static' but never defined [-Wunused-function]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcreg':
+ril/src/ril_ble_clinet.c:96:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcscan':
+ril/src/ril_ble_clinet.c:122:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatccon':
+ril/src/ril_ble_clinet.c:152:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcss':
+ril/src/ril_ble_clinet.c:222:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcgc':
+ril/src/ril_ble_clinet.c:240:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcgd':
+ril/src/ril_ble_clinet.c:278:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcrc':
+ril/src/ril_ble_clinet.c:314:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcwc':
+ril/src/ril_ble_clinet.c:342:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcwd':
+ril/src/ril_ble_clinet.c:371:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcrd':
+ril/src/ril_ble_clinet.c:402:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcrn':
+ril/src/ril_ble_clinet.c:430:9: warning: unused variable 'ret' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcgdt':
+ril/src/ril_ble_clinet.c:454:13: warning: unused variable 'n' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:454:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'RIL_BT_Gatcl':
+ril/src/ril_ble_clinet.c:473:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcscan':
+ril/src/ril_ble_clinet.c:495:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatccon':
+ril/src/ril_ble_clinet.c:532:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcss':
+ril/src/ril_ble_clinet.c:562:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcgc':
+ril/src/ril_ble_clinet.c:613:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:614:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:625:9: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+ril/src/ril_ble_clinet.c:625:36: warning: incompatible implicit declaration of built-in function 'strlen' [enabled by default]
+ril/src/ril_ble_clinet.c:625:9: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+ril/src/ril_ble_clinet.c:625:9: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:606:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcgd':
+ril/src/ril_ble_clinet.c:642:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:643:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:636:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcrc':
+ril/src/ril_ble_clinet.c:671:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:672:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:665:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcrd':
+ril/src/ril_ble_clinet.c:696:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:697:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:690:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'OnURCHandler_BTGatcn':
+ril/src/ril_ble_clinet.c:722:5: warning: pointer targets in passing argument 1 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:40:0:
+include/ql_stdlib.h:47:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:723:5: warning: pointer targets in passing argument 2 of 'Ql_StrPrefixMatch' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_ble_clinet.c:46:0:
+ril/inc/ril_util.h:47:13: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_ble_clinet.c:716:9: warning: unused variable 'err_code' [-Wunused-variable]
+ril/src/ril_ble_clinet.c: In function 'ATRsp_QBTGatcrn_Hdlr':
+ril/src/ril_ble_clinet.c:828:7: warning: unused variable 'used' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:827:5: warning: unused variable 'result' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:826:6: warning: unused variable 'char_prop' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:825:8: warning: unused variable 'char_uuid' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:824:9: warning: unused variable 'char_inst' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:823:6: warning: unused variable 'is_primary' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:822:6: warning: unused variable 'service_inst' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:821:5: warning: unused variable 'service_uuid' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:820:6: warning: unused variable 'conn_id' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:819:7: warning: unused variable 'client_id' [-Wunused-variable]
+ril/src/ril_ble_clinet.c:856:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_bluetooth.c: In function 'OnURCHandler_BTDisconn':
+ril/src/ril_bluetooth.c:1531:10: warning: unused variable 'profileId' [-Wunused-variable]
+ril/src/ril_gps.c: In function 'RIL_GPS_Read':
+ril/src/ril_gps.c:147:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_gps.c:36:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_gps.c:147:5: warning: pointer targets in passing argument 1 of 'Ql_strncmp' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_gps.c:36:0:
+include/ql_stdlib.h:52:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_gps.c:161:9: warning: pointer targets in passing argument 2 of 'Ql_strcpy' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_gps.c:36:0:
+include/ql_stdlib.h:47:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_gps.c: In function 'ATResponse_GPSRead_Hdlr':
+ril/src/ril_gps.c:171:7: warning: unused variable 'strTmp' [-Wunused-variable]
+ril/src/ril_gps.c:169:8: warning: unused variable 'p2' [-Wunused-variable]
+ril/src/ril_gps.c:168:8: warning: unused variable 'p1' [-Wunused-variable]
+ril/src/ril_gps.c: In function 'OnURCHandler_GPSCMD':
+ril/src/ril_gps.c:338:4: warning: passing argument 1 of 'callback_GPSCMD' discards 'const' qualifier from pointer target type [enabled by default]
+ril/src/ril_gps.c:338:4: note: expected 'char *' but argument is of type 'const char *'
+ril/src/ril_location.c: In function 'ATResponse_GetLocation_Ex_Handler':
+ril/src/ril_location.c:78:11: warning: unused variable 'p2' [-Wunused-variable]
+ril/src/ril_location.c:77:11: warning: unused variable 'p1' [-Wunused-variable]
+ril/src/ril_location.c: In function 'OnURCHandler_QCELLLocation':
+ril/src/ril_location.c:176:11: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+ril/src/ril_location.c:177:9: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_location.c:38:0:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTSUB':
+ril/src/ril_mqtt.c:179:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:179:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:183:11: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:183:11: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:185:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:185:3: warning: pointer targets in passing argument 1 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:185:3: warning: pointer targets in passing argument 2 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:189:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:189:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:190:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:190:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:187:12: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c: In function 'RIL_MQTT_QMTUNS':
+ril/src/ril_mqtt.c:239:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:239:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:243:11: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:243:11: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:245:3: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:245:3: warning: pointer targets in passing argument 1 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:245:3: warning: pointer targets in passing argument 2 of 'Ql_strncat' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:50:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:249:5: warning: pointer targets in passing argument 1 of 'Ql_sprintf' differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:249:5: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:251:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from ril/src/ril_mqtt.c:35:0:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c:251:5: warning: pointer targets in passing argument 1 of 'Ql_RIL_SendATCmd' differ in signedness [-Wpointer-sign]
+In file included from ril/inc/ril_mqtt.h:37:0,
+                 from ril/src/ril_mqtt.c:33:
+ril/inc/ril.h:187:12: note: expected 'char *' but argument is of type 'u8 *'
+ril/src/ril_mqtt.c: In function 'ATResponse_QMTPUB_handler':
+ril/src/ril_mqtt.c:302:8: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:309:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:314:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:319:11: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+ril/src/ril_mqtt.c:299:9: warning: unused variable 'i' [-Wunused-variable]
+ril/src/ril_network.c: In function 'ATRsp_COPS_Handler':
+ril/src/ril_network.c:501:14: warning: unused variable 'str' [-Wunused-variable]
+ril/src/ril_ntp.c: In function 'OnURCHandler_NTPCMD':
+ril/src/ril_ntp.c:50:4: warning: passing argument 1 of 'callback_NTPCMD' discards 'const' qualifier from pointer target type [enabled by default]
+ril/src/ril_ntp.c:50:4: note: expected 'char *' but argument is of type 'const char *'
+ril/src/ril_system.c: In function 'QSDK_Get_Strlen':
+ril/src/ril_system.c:457:1: warning: control reaches end of non-void function [-Wreturn-type]
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_OPEN':
+ril/src/ril_urc.c:698:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_CONN':
+ril/src/ril_urc.c:734:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_SUB':
+ril/src/ril_urc.c:769:10: warning: array subscript has type 'char' [-Wchar-subscripts]
+ril/src/ril_urc.c:773:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+ril/src/ril_urc.c:778:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_PUB':
+ril/src/ril_urc.c:819:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_TUNS':
+ril/src/ril_urc.c:848:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_STATE':
+ril/src/ril_urc.c:874:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_CLOSE':
+ril/src/ril_urc.c:902:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+ril/src/ril_urc.c: In function 'OnURCHandler_MQTT_DISC':
+ril/src/ril_urc.c:932:3: warning: passing argument 4 of 'Ql_OS_SendMessage' makes integer from pointer without a cast [enabled by default]
+In file included from ril/src/ril_urc.c:40:0:
+include/ql_system.h:244:5: note: expected 'u32' but argument is of type 'struct MQTT_Urc_Param_t *'
+example/nema_pro.c: In function 'read_gps_I2C_buffer':
+example/nema_pro.c:172:9: warning: unused variable 'realwrlen' [-Wunused-variable]
+example/nema_pro.c: In function 'extract_nmea':
+example/nema_pro.c:192:5: warning: unused variable 'nmea_buf' [-Wunused-variable]
+example/nema_pro.c:191:9: warning: unused variable 'realwrlen' [-Wunused-variable]
+example/nema_pro.c: In function 'iop_inst_avail':
+example/nema_pro.c:285:21: warning: operation on 'id_que_tail' may be undefined [-Wsequence-point]
+example/nema_pro.c: In function 'iop_get_inst':
+example/nema_pro.c:323:13: warning: operation on 'idx' may be undefined [-Wsequence-point]
+example/nema_pro.c: In function 'iop_pcrx_nmea':
+example/nema_pro.c:355:25: warning: operation on 'id_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:360:29: warning: operation on 'id_que_tail' may be undefined [-Wsequence-point]
+example/nema_pro.c:381:29: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:387:29: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/nema_pro.c:407:25: warning: operation on 'rx_que_head' may be undefined [-Wsequence-point]
+example/utility.c: In function 'Check_Separator':
+example/utility.c:45:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:52:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:59:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:42:11: warning: unused variable 'pChar2' [-Wunused-variable]
+example/utility.c: In function 'Analyse_Command':
+example/utility.c:103:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+example/utility.c:120:17: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/main.c:3:
+custom/mg_timer.h:240:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_mqtt.h:31:0,
+                 from custom/main.c:3:
+custom/mg_gnss.h:28:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_gnss.h:39:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/main.c:3:0:
+custom/mg_mqtt.h:114:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:115:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:116:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:293:8: warning: extra tokens at end of #endif directive [enabled by default]
+custom/main.c: In function 'proc_main_task':
+custom/main.c:63:5: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+custom/main.c:54:9: warning: unused variable 'ret' [-Wunused-variable]
+In file included from custom/mg_mqtt.h:7:0,
+                 from custom/main.c:3:
+custom/main.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/main.c:3:
+custom/mg_timer.h:44:12: warning: 'Stack_timer' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/main.c:3:
+custom/mg_timer.h:45:12: warning: 'ST_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:46:12: warning: 'm_param1' defined but not used [-Wunused-variable]
+custom/mg_timer.h:48:12: warning: 'GP_timer' defined but not used [-Wunused-variable]
+custom/mg_timer.h:49:12: warning: 'GPT_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:50:12: warning: 'm_param2' defined but not used [-Wunused-variable]
+In file included from custom/main.c:3:0:
+custom/mg_mqtt.h:47:11: warning: 'm_mqtt_state' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:60:12: warning: 'MQTT_TIMER_TRANSFER_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:61:12: warning: 'MQTT_TIMER_TRANSFER_PERIOD' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:63:12: warning: 'MQTT_TIMER_SETUP_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:64:12: warning: 'MQTT_TIMER_SETUP_PERIOD' defined but not used [-Wunused-variable]
+custom/mg_adc.c: In function '__MG_ADC_BEGIN':
+custom/mg_adc.c:29:5: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+In file included from custom/mg_adc.c:4:0:
+custom/mg_adc.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_gnss.c:1:0:
+custom/mg_gnss.h:28:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_gnss.h:39:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_gnss.c:2:
+custom/mg_timer.h:240:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_gnss.c:2:0:
+custom/mg_mqtt.h:114:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:115:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:116:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:293:8: warning: extra tokens at end of #endif directive [enabled by default]
+custom/mg_gnss.c: In function 'GPSPower':
+custom/mg_gnss.c:19:13: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+custom/mg_gnss.c: At top level:
+custom/mg_gnss.c:152:7: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_gnss.c: In function 'Read_GPS':
+custom/mg_gnss.c:155:5: warning: pointer targets in passing argument 1 of 'RIL_GPS_Read' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_gnss.h:8:0,
+                 from custom/mg_gnss.c:1:
+ril/inc/ril_gps.h:107:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/mg_gnss.c:156:12: warning: type defaults to 'int' in declaration of 'Pos_GMAPS' [enabled by default]
+custom/mg_gnss.c:158:5: warning: passing argument 2 of 'parseRMC' from incompatible pointer type [enabled by default]
+custom/mg_gnss.c:95:13: note: expected 'u8 *' but argument is of type 'int *'
+In file included from custom/mg_gnss.h:7:0,
+                 from custom/mg_gnss.c:1:
+custom/mg_gnss.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_gnss.c:2:
+custom/mg_timer.h:44:12: warning: 'Stack_timer' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_gnss.c:2:
+custom/mg_timer.h:45:12: warning: 'ST_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:46:12: warning: 'm_param1' defined but not used [-Wunused-variable]
+custom/mg_timer.h:48:12: warning: 'GP_timer' defined but not used [-Wunused-variable]
+custom/mg_timer.h:49:12: warning: 'GPT_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:50:12: warning: 'm_param2' defined but not used [-Wunused-variable]
+In file included from custom/mg_gnss.c:2:0:
+custom/mg_mqtt.h:47:11: warning: 'm_mqtt_state' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:60:12: warning: 'MQTT_TIMER_TRANSFER_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:61:12: warning: 'MQTT_TIMER_TRANSFER_PERIOD' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:63:12: warning: 'MQTT_TIMER_SETUP_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:64:12: warning: 'MQTT_TIMER_SETUP_PERIOD' defined but not used [-Wunused-variable]
+In file included from custom/mg_gprs.c:1:0:
+custom/mg_gprs.h:8:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_mqtt.c:1:
+custom/mg_timer.h:240:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_mqtt.h:31:0,
+                 from custom/mg_mqtt.c:1:
+custom/mg_gnss.h:28:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_gnss.h:39:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_mqtt.c:1:0:
+custom/mg_mqtt.h:114:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:115:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:116:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:293:8: warning: extra tokens at end of #endif directive [enabled by default]
+custom/mg_mqtt.c:108:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.c: In function 'MQTT_Pub':
+custom/mg_mqtt.c:111:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:114:9: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+custom/mg_mqtt.c: At top level:
+custom/mg_mqtt.c:126:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.c: In function 'MQTT_Sub':
+custom/mg_mqtt.c:132:5: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c: In function '__MG_MQTT_SETUP_Callback_Timer':
+custom/mg_mqtt.c:209:13: warning: pointer targets in passing argument 2 of 'RIL_MQTT_QMTOPEN' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:19:0,
+                 from custom/mg_mqtt.c:1:
+ril/inc/ril_mqtt.h:192:5: note: expected 'u8 *' but argument is of type 'char *'
+custom/mg_mqtt.c:247:13: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c: In function '__MG_MQTT_TRANSFER_Callback_Timer':
+custom/mg_mqtt.c:305:5: warning: implicit declaration of function '__MG_Wakeup_All' [-Wimplicit-function-declaration]
+custom/mg_mqtt.c:314:13: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:342:5: warning: implicit declaration of function '__MG_Sleep_All' [-Wimplicit-function-declaration]
+custom/mg_mqtt.c:336:9: warning: unused variable 'ret' [-Wunused-variable]
+custom/mg_mqtt.c: In function 'Action_on_incoming_call':
+custom/mg_mqtt.c:382:13: warning: pointer targets in passing argument 1 of 'Ql_strlen' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:54:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:396:13: warning: unused variable 'ret' [-Wunused-variable]
+custom/mg_mqtt.c: In function '__MG_MQTT_RECV_HANDLER':
+custom/mg_mqtt.c:413:5: warning: pointer targets in passing argument 1 of 'Ql_strncpy' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:48:7: note: expected 'char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:413:5: warning: pointer targets in passing argument 2 of 'Ql_strncpy' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:48:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c: In function '__MG_MQTT_CallBack_UART_Hdlr':
+custom/mg_mqtt.c:462:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:480:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:498:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:508:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:523:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:538:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:545:17: warning: pointer targets in passing argument 1 of 'Ql_strncpy' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:48:7: note: expected 'char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:545:17: warning: pointer targets in passing argument 2 of 'Ql_strncpy' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:48:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:558:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:563:5: warning: implicit declaration of function 'Analyse_Command' [-Wimplicit-function-declaration]
+custom/mg_mqtt.c:568:5: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:41:8: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:583:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:599:13: warning: pointer targets in passing argument 1 of 'Ql_strstr' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:55:7: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c:610:5: warning: pointer targets in passing argument 1 of 'Ql_atoi' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_mqtt.h:5:0,
+                 from custom/mg_mqtt.c:1:
+include/ql_stdlib.h:41:8: note: expected 'const char *' but argument is of type 'u8 *'
+custom/mg_mqtt.c: In function 'URC_EVENT_HANDLER':
+custom/mg_mqtt.c:737:13: warning: passing argument 1 of 'Action_on_incoming_call' from incompatible pointer type [enabled by default]
+custom/mg_mqtt.c:372:6: note: expected 'char *' but argument is of type 'char (*)[41]'
+In file included from custom/mg_mqtt.h:7:0,
+                 from custom/mg_mqtt.c:1:
+custom/mg_mqtt.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_mqtt.c:1:
+custom/mg_timer.h:44:12: warning: 'Stack_timer' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_mqtt.c:1:
+custom/mg_timer.h:45:12: warning: 'ST_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:46:12: warning: 'm_param1' defined but not used [-Wunused-variable]
+custom/mg_timer.h:48:12: warning: 'GP_timer' defined but not used [-Wunused-variable]
+custom/mg_timer.h:49:12: warning: 'GPT_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:50:12: warning: 'm_param2' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.c:1:0:
+custom/mg_mqtt.h:60:12: warning: 'MQTT_TIMER_TRANSFER_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:61:12: warning: 'MQTT_TIMER_TRANSFER_PERIOD' defined but not used [-Wunused-variable]
+custom/mg_mqtt.c: In function 'URC_EVENT_HANDLER':
+custom/mg_mqtt.c:675:13: warning: 'ret' may be used uninitialized in this function [-Wuninitialized]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_sleep.h:4,
+                 from custom/mg_sleep.c:1:
+custom/mg_timer.h:240:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_mqtt.h:31:0,
+                 from custom/mg_sleep.h:4,
+                 from custom/mg_sleep.c:1:
+custom/mg_gnss.h:28:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_gnss.h:39:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_sleep.h:4:0,
+                 from custom/mg_sleep.c:1:
+custom/mg_mqtt.h:114:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:115:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:116:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_mqtt.h:293:8: warning: extra tokens at end of #endif directive [enabled by default]
+In file included from custom/mg_sleep.c:1:0:
+custom/mg_sleep.h:8:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_sleep.h:9:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_sleep.c:3:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_sleep.c: In function '__MG_Sleep_All':
+custom/mg_sleep.c:10:9: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+custom/mg_sleep.c:25:5: warning: implicit declaration of function 'Ql_SleepEnable' [-Wimplicit-function-declaration]
+custom/mg_sleep.c: At top level:
+custom/mg_sleep.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+custom/mg_sleep.c: In function '__MG_Wakeup_All':
+custom/mg_sleep.c:35:5: warning: implicit declaration of function 'Ql_SleepDisable' [-Wimplicit-function-declaration]
+In file included from custom/mg_mqtt.h:7:0,
+                 from custom/mg_sleep.h:4,
+                 from custom/mg_sleep.c:1:
+custom/mg_sleep.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_sleep.h:4,
+                 from custom/mg_sleep.c:1:
+custom/mg_timer.h:44:12: warning: 'Stack_timer' defined but not used [-Wunused-variable]
+In file included from custom/mg_mqtt.h:9:0,
+                 from custom/mg_sleep.h:4,
+                 from custom/mg_sleep.c:1:
+custom/mg_timer.h:45:12: warning: 'ST_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:46:12: warning: 'm_param1' defined but not used [-Wunused-variable]
+custom/mg_timer.h:48:12: warning: 'GP_timer' defined but not used [-Wunused-variable]
+custom/mg_timer.h:49:12: warning: 'GPT_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:50:12: warning: 'm_param2' defined but not used [-Wunused-variable]
+In file included from custom/mg_sleep.h:4:0,
+                 from custom/mg_sleep.c:1:
+custom/mg_mqtt.h:47:11: warning: 'm_mqtt_state' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:60:12: warning: 'MQTT_TIMER_TRANSFER_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:61:12: warning: 'MQTT_TIMER_TRANSFER_PERIOD' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:63:12: warning: 'MQTT_TIMER_SETUP_ID' defined but not used [-Wunused-variable]
+custom/mg_mqtt.h:64:12: warning: 'MQTT_TIMER_SETUP_PERIOD' defined but not used [-Wunused-variable]
+custom/mg_sms.c: In function 'ConSMSBuf_GetIndex':
+custom/mg_sms.c:47:9: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+custom/mg_sms.c: In function 'SMS_TextMode_Read':
+custom/mg_sms.c:299:29: warning: unused variable 'pSubmitTextInfo' [-Wunused-variable]
+custom/mg_sms.c: In function 'SMS_TextMode_Send':
+custom/mg_sms.c:385:5: warning: pointer targets in passing argument 4 of 'RIL_SMS_SendSMS_Text' differ in signedness [-Wpointer-sign]
+In file included from custom/mg_sms.h:6:0,
+                 from custom/mg_sms.c:1:
+ril/inc/ril_sms.h:316:12: note: expected 'u8 *' but argument is of type 'char *'
+custom/mg_sms.c: In function 'Hdlr_RecvNewSMS':
+custom/mg_sms.c:678:5: warning: implicit declaration of function '__MG_Wakeup_All' [-Wimplicit-function-declaration]
+custom/mg_sms.c:850:5: warning: passing argument 1 of 'Action_on_recv_SMS' from incompatible pointer type [enabled by default]
+custom/mg_sms.c:656:6: note: expected 'char *' but argument is of type 'char (*)[22]'
+custom/mg_sms.c:850:5: warning: passing argument 2 of 'Action_on_recv_SMS' from incompatible pointer type [enabled by default]
+custom/mg_sms.c:656:6: note: expected 'char *' but argument is of type 'char (*)[22]'
+custom/mg_sms.c:850:5: warning: passing argument 5 of 'Action_on_recv_SMS' from incompatible pointer type [enabled by default]
+custom/mg_sms.c:656:6: note: expected 'char *' but argument is of type 'char (*)[22]'
+custom/mg_sms.c:850:5: warning: passing argument 7 of 'Action_on_recv_SMS' from incompatible pointer type [enabled by default]
+custom/mg_sms.c:656:6: note: expected 'u8 *' but argument is of type 'u8 (*)[640]'
+custom/mg_sms.c:870:5: warning: implicit declaration of function '__MG_Sleep_All' [-Wimplicit-function-declaration]
+In file included from custom/mg_sms.h:9:0,
+                 from custom/mg_sms.c:1:
+custom/mg_sms.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+custom/mg_spi.c: In function 'SPI_SETUP':
+custom/mg_spi.c:46:9: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+In file included from custom/mg_spi.h:8:0,
+                 from custom/mg_spi.c:1:
+custom/mg_spi.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_timer.c:1:0:
+custom/mg_timer.h:240:8: warning: extra tokens at end of #endif directive [enabled by default]
+custom/mg_timer.c: In function '__MG_STIMER_BEGIN':
+custom/mg_timer.c:9:9: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+In file included from custom/mg_timer.h:40:0,
+                 from custom/mg_timer.c:1:
+custom/mg_timer.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+In file included from custom/mg_timer.c:1:0:
+custom/mg_timer.h:45:12: warning: 'ST_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:46:12: warning: 'm_param1' defined but not used [-Wunused-variable]
+custom/mg_timer.h:49:12: warning: 'GPT_Interval' defined but not used [-Wunused-variable]
+custom/mg_timer.h:50:12: warning: 'm_param2' defined but not used [-Wunused-variable]
+custom/mg_uart.c: In function '__MG_UART_BEGIN_with_Callback':
+custom/mg_uart.c:46:9: warning: implicit declaration of function '__APP_DEBUG' [-Wimplicit-function-declaration]
+In file included from custom/mg_uart.c:3:0:
+custom/mg_uart.c: At top level:
+custom/mg_debugger.h:26:13: warning: 'DBG_BUFFER' defined but not used [-Wunused-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_FotaMain':
+custom/fota/src/fota_ftp.c:44:9: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_Callback_OnDownload':
+custom/fota/src/fota_ftp.c:83:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c:82:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_Program':
+custom/fota/src/fota_ftp.c:124:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
+custom/fota/src/fota_ftp.c: In function 'FTP_Callback_OnDownload':
+custom/fota/src/fota_ftp.c:315:35: warning: 'retValue' may be used uninitialized in this function [-Wmaybe-uninitialized]
+custom/fota/src/fota_ftp.c:198:10: note: 'retValue' was declared here
+custom/fota/src/fota_main.c: In function 'Ql_FOTA_StartUpgrade':
+custom/fota/src/fota_main.c:33:10: warning: variable 'retValue' set but not used [-Wunused-but-set-variable]
